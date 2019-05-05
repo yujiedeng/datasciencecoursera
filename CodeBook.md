@@ -31,7 +31,8 @@ For each record it is provided:
 
 
 ## preparation part: garbage collection and loading necessary libraries, set directories
-`<rm(list=ls())
+`< 
+rm(list=ls())
 gc()
 library(data.table)
 library(dplyr)
