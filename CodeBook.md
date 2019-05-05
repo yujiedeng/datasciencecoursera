@@ -31,7 +31,7 @@ For each record it is provided:
 
 
 ## preparation part: garbage collection and loading necessary libraries, set directories
-`< 
+```
 rm(list=ls())
 gc()
 library(data.table)
@@ -39,7 +39,7 @@ library(dplyr)
 setwd("~/ds/DSJHU/getting_cleaning_data") 
 w_dir <- setwd("~/ds/DSJHU/getting_cleaning_data") 
 folder <- "/UCI HAR Dataset" #define name of the folder
->`
+```
 
 ## Cleaning and Preparing the data
 loading necessary variables: activities, subjects, training and testing data
