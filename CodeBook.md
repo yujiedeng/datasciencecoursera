@@ -43,7 +43,7 @@ folder <- "/UCI HAR Dataset" #define name of the folder
 
 ## Cleaning and Preparing the data
 loading necessary variables: activities, subjects, training and testing data
-`<features <- read.table(paste0(w_dir,
+```features <- read.table(paste0(w_dir,
                               folder, "/features.txt"))
 act_labels <- read.table(paste0(w_dir,folder, "/activity_labels.txt"))
 colnames(act_labels) <- c("id_label", "act")
@@ -69,10 +69,10 @@ colnames(y_test) <- c("id_label")
 df_train <- cbind(x_train, y_train, sbj_train)
 df_test <- cbind(x_test,y_test,sbj_test)
 df_merge <- rbind(df_train, df_test)
->`
+```
 
 Extracts only the measurements on the mean and standard deviation for each measurement
-`<col <- names(df_merge)
+```col <- names(df_merge)
 vector <- (grepl("^id_label",col) | grepl("^id_sbj",col)
            |grepl("-mean..",col) & !grepl("-meanFreq..",col) & !grepl("mean..-",col) 
            |grepl("-std..",col) & !grepl("-std()..-",col) )
@@ -118,4 +118,4 @@ df_agg <- aggregate(df_mean_st_act[,names(df_mean_st_act)
 
 # Export tidyData set 
 write.table(df_agg, './FinalTidyData.txt',row.names=FALSE,sep='\t')
->`
+```
